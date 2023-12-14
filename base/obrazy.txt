@@ -1,0 +1,1 @@
+<figure><img src="#ZRODLO"><figcaption>#OPIS</figcaption></figure>

@@ -1,0 +1,1 @@
+<div id="main"><div id="wyroznione"><hgroup><a href="#LINK">#NAGLOWEK</a></hgroup></div><div id="tekst"><section>#TEKST#GALERIA</section></div></div>
