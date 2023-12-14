@@ -99,10 +99,10 @@ if (odp.lower()=="y"):
                             galeria = galeria.replace("#LEFT",left)
                             kodHTML = kodHTML.replace("#GALERIA",galeria)
                     kodHTML = kodHTML.replace("#GALERIA","")
+                    kodHTML = zamienTekst(dane,kodHTML,"#LINK")
                     if i["typ"] == "Python":
                         pPython += kodHTML
                     elif i["typ"] == "HTML":
-                        kodHTML = zamienTekst(dane,kodHTML,"#LINK")
                         pHTML += kodHTML
                     elif i["typ"] == "CPP":
                         pCPP += kodHTML
