@@ -1,0 +1,28 @@
+{
+    "projektyDir": "C:\\Users\\kamil\\Documents\\projekty\\moje projekty",
+    "szkice": "C:\\Users\\kamil\\Documents\\projekty\\moje projekty\\Python\\HTML updater\\base",
+    "dane": "C:\\Users\\kamil\\Documents\\projekty\\moje projekty\\Python\\HTML updater\\dane",
+    "projekty": 
+    [
+        {
+            "nazwa": "Color Palette Generator",
+            "sciezka": "strony\\Duze\\Color Palette Generator",
+            "typ": "HTML"
+        },
+        {
+            "nazwa": "Rogal",
+            "sciezka": "strony\\Duze\\Rogal",
+            "typ": "HTML"
+        },
+        {
+            "nazwa": "Pomodoro Timer",
+            "sciezka": "strony\\Male\\Pomodoro Timer",
+            "typ": "HTML"
+        },
+        {
+            "nazwa": "HTML Updater",
+            "sciezka": "strony\\Duze\\Rogal",
+            "typ": "Python"
+        }
+    ]
+}
