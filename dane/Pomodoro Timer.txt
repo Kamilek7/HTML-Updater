@@ -1,0 +1,20 @@
+#POWITALNE
+To jest strona próbna Pomodoro Timer
+#OPIS
+Pomodoro Timer napisałem około czerwca na życzenie Huberta (jednego z moich przyjaciół).
+<br><br>
+Niestety moja przyjaźń z nim nie trwała potem zbyt długo bo po kilku latach znajomości byłem zmuszony zerwać z nim kontakt.<br>
+Strona dalej będzie mi o nim częściowo przypominać bo sam z niej zbyt bardzo nie korzystam, a zrobilem jej z braku jakiejkolwiek inspiracji i cały czas przez nią mam w głowie przed sobą jakieś aesthetic emo girls z anime ze wczesnych 2000 lub postacie z Cardcaptor Sakura xd<br>
+<br><br>
+Sama strona operuje w banalnie prosty sposób i jako tako najwiecej czasu zajelo mi ogarnięcie okienek w ktorych są widoczne timery. <br>
+Potrzebuje dodatkowo lekkiej renowacji pod wzgledem CSS (jako sticky pierwotnie użyłem kodu z javascript zamiast doslownie np position:fixed xd)
+#LINK
+..\output\Pomodoro Timer\index.html
+#NAGLOWEK
+Pomodoro Timer
+#TEKST
+Strona ma na celu usprawnić planowanie swoich godzin pracy lub nauki przy użyciu techniki Pomodoro.<br><br>Technika ta rozdziela czas pracy na czas spędzony na samej pracy oraz na czas przeznaczony na krótkie przerwy od pracy, które miałoby zwiększyć efektywność pracy ze względu na fakt iż człowiek może mieć problemy z koncentracją przy ciągłym kontynuowaniu swojej pracy w długim przedziale czasu.
+#GALERIA
+#IMAGES
+<img src="img\Pomodoro Timer\1.png"><img src="img\Pomodoro Timer\2.png"><img src="img\Pomodoro Timer\2.png"><img src="img\Pomodoro Timer\2.png">
+#

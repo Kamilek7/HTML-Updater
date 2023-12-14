@@ -1,0 +1,16 @@
+#POWITALNE
+To jest strona próbna Rogala
+#OPIS
+Rogal był moją pierwszą aplikacją webową a zarazem też pierwszym większym projektem programistycznym (takim na którym spędziłem dużo czasu).
+<br><br>
+Rozpoczęcie mojej przygody w programowaniem było bardzo silnie ugruntowane w mojej przyjaźni z Michałem, Maciejem a przede wszystkim Przemkiem (każdy z nich był uczniem technikum na kierunku technika informatyka/programisty)<br>
+Byli oni silną insipracją dla mnie jeżeli chodzi o rozwijanie się w tym kierunku, ponieważ tworzyło to dodatkowe tematy do rozmów, a nie chciałem się przecież czuć gorszy w naszym ukochanym circlejerku.
+<br><br>
+Sama strona jest napisana bardzo prymitywnym kodem PHP i odłamkami JavaScriptu. Poprzez PHP strona zmienia zawartość w pliku indexu i tworzy wrażenie przechodzenia z jednej strony do drugiej. Oprócz tego z pomocą PHP i bazy danych w SQL zapisuje ona dane wprowadzone przez użytkownika i później wywołuje je jako listę tasków do wykonania i inne dodatkowe funkcje.
+#LINK
+..\output\Rogal\index.php
+#NAGLOWEK
+Rogal
+#TEKST
+Strona jest pewnego rodzaju panelem służącym do samodoskonalenia się w kierunku swoich hobby lub pomniejszych zainteresowań.<br><br>(Tutaj bedzie cos wiecej)
+#

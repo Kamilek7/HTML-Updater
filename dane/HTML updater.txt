@@ -1,0 +1,10 @@
+#NAGLOWEK
+HTML updater
+#TEKST
+Projekt ktory przyczynil sie do powstania tej strony.<br><br>
+Samo jego okodowanie jest banalnie proste - kod przyjmuje wartosci bazowe dla stron, opisow itd. i wypluwa odpowiedni kod w postaci stron html.<br>
+Sam sposób w jaki jest formatowany tekst jest kompletnie bezpośredni i oprócz podstawowych jego aspektow (jak przydzial tekstu do odpowiedniej kategorii itd.) trzeba stosować wszystkie wymagane znaczniki HTML, co powoduje ze dalsze formatowanie tekstu nie jest kompletnie przyjazne nieogarniętym uzytkownikom.
+#GALERIA
+#IMAGES
+<img src="img\HTML updater\1.png"><img src="img\HTML updater\2.png"><img src="img\HTML updater\3.png">
+#
