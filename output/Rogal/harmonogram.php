@@ -22,7 +22,7 @@
 
     #Funkcja od Przemka która wysyła pingi na Discorda. To dalej mnie zachwyca, że api Discorda jest obsługiwane również przez PHP.
     function send($msg,$id="1092760909337862144"){
-        $token="Bot MTA5Mjc1NzU0NjQyMDQxNjUyMg.GYoUO8.mwpSQayaln7GAIt6enlzEqjFT1aUPJLYBPYw0g";
+        $token="token";
         $curl = curl_init("https://discord.com/api/v9/channels/$id/messages");
         curl_setopt($curl, CURLOPT_POSTFIELDS, array('content' => $msg));
         curl_setopt($curl, CURLOPT_HTTPHEADER, ["authorization: $token"]);
