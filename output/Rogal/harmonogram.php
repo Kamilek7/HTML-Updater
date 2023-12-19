@@ -10,10 +10,10 @@
     else if ($dzisiaj=="Sat") $numer = 6;
     else if ($dzisiaj=="Sun") $numer = 7;
     #Dane z bazy danych w SQL, simple enough.
-    $host = "mysql.cba.pl";
-    $db_user = "kamilek777";
-    $db_password = "Czolo42069";
-    $db_name = "kamilek777";
+    $host = "no";
+    $db_user = "no";
+    $db_password = "no";
+    $db_name = "no";
     $polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
 
     $sql = "SELECT * FROM uzytkownicy";
