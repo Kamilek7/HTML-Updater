@@ -3,7 +3,7 @@ To jest strona próbna XXX
 #OPIS
 Opis (tekst przy podgladzie strony)
 #LINK
-..\output\XXX\index.html
+..\output\XXX\index.html (moze tez byc link do githuba)
 #NAGLOWEK
 XXX
 #TEKST
