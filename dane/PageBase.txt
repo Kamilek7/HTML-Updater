@@ -13,3 +13,5 @@ Tekst na stronie glownej
 <img src="img\XXX\1.png">
 #
 #
+Nazwa pliku ma miec nazwe wyszukiwanego folderu z projektem
+Oprocz tego powinny istniec pliki me.txt i Main.txt ktore odpowiadaja odpowiednio za informacje o kontakcie i informacje na stronie glownej
