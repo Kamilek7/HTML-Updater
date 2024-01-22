@@ -1,16 +1,15 @@
 #POWITALNE
-To jest strona próbna Color Palette Generator
+To jest strona próbna XXX
 #OPIS
-Strona którą napisałem na zlecienie od Zuzi.<br>Napisanie samego kodu zajęło mi potwornie duzo czasu i musze teraz wszystko poprawić zeby przepisac baze działania z HSL na HSV, bo tutaj popelnilem błąd nie mając żadnego pojęcia o działaniu róznych rodzajow kół barw.<br><br>Zuzia uzyła tej strony - uwaga, uwaga - jeden raz.
+Opis (tekst przy podgladzie strony)
 #LINK
-..\output\Color Palette Generator\index.html
+..\output\XXX\index.html
 #NAGLOWEK
-Color Palette Generator
+XXX
 #TEKST
-Strona która dobiera palety kolorów w odpowiednich szeregach rozstawionych na kole barw - dopełniającym, analogicznym, kwadratowym i w triadach. <br>
-Istnieje możliwosc wyboru koloru w odpowiednim oknie wyboru zależnym od obslugiwanej przeglądarki, poprzez dostosowanie wartosci, kontrastu i stopni koloru w systemie HSV (wczesniej HSL) w kole barw lub poprzez wybranie losowo wygenerowanych barw.
-#GALERIA
+Tekst na stronie glownej
+#GALERIA - oznaczenie ze tutaj trzeba dodac galerie
 #IMAGES
-<img src="img\Color Palette Generator\1.png"><img src="img\Color Palette Generator\2.png"><img src="img\Color Palette Generator\3.png"><img src="img\Color Palette Generator\4.png">
+<img src="img\XXX\1.png">
 #
 #
