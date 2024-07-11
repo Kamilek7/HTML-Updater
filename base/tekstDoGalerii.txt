@@ -1,1 +1,0 @@
-<div class="gal"><div class="buttonLeft"><input type="image" src="bracketsR.png" onclick="clickLeft(this)"></div><div class="anotherDiv"><div class="window"><div class="image" style="left: #LEFT">#IMAGES</div></div></div><div class="buttonRight"><input type="image" src="brackets.png" onclick="clickRight(this)"></div></div>
