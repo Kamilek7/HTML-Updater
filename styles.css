@@ -1,0 +1,25 @@
+body
+{
+    background-color: #101010;
+    color: rgb(235, 235, 235);
+}
+#intro
+{
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#mainLeft
+{
+    text-align: center;
+    width: 50%;
+}
+#mainRight
+{
+    width: 50%;
+}
+#hello
+{
+    font-size: large;
+}
