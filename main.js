@@ -1,5 +1,7 @@
-var pages = {Introduction: 0};
-var currentPage = pages.Introduction;
+var pageList = [document.getElementById("intro"), document.getElementById("projects")]
+
+var numberOfPages = 2;
+var currentPage = 0;
 var cards = document.getElementsByClassName("mainBoxes")
 var cardPlaceholder = document.getElementById("placeholder")
 var shuffled = false;
@@ -26,16 +28,26 @@ function scrollManager(eventDelta)
 
     if (scrolling < -3) 
     {
-        console.log("scrolledDown");
         scrolling = 0;
+        if (currentPage<numberOfPages-1)
+        {
+            currentPage+=1;
+            pageList[currentPage-1].style.animationName = "scrollDown";
+        }
+            
+        
     }
     else if (scrolling > 3) 
     {
-        console.log("scrolledUp");
         scrolling = 0;
+        if (currentPage>0)
+        {
+            currentPage-=1;
+            pageList[currentPage].style.animationName = "scrollUp";
+        }
+            
     }
-
-
+    console.log(currentPage);
 }
 
 cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
