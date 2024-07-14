@@ -1,6 +1,6 @@
-var pageList = [document.getElementById("intro"), document.getElementById("projects")]
+var pageList = [document.getElementById("intro"), document.getElementById("projects"), document.getElementById("test")]
 
-var numberOfPages = 2;
+var numberOfPages = 3;
 var currentPage = 0;
 var cards = document.getElementsByClassName("mainBoxes")
 var cardPlaceholder = document.getElementById("placeholder")
