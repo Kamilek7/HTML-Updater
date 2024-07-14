@@ -23,30 +23,18 @@ function scrollManager(eventDelta)
 {
     setTimeout(() => scrolling=0, 1000);
     scrolling += eventDelta/ Math.abs(eventDelta)
-    if (scrolling<0)
+
+    if (scrolling < -3) 
     {
-        if (scrolling<-4)
-        {
-            console.log("scrolledDown");
-            scrolling = 0;
-        }
-        else
-        {
-            console.log("barelyDown");
-        }
+        console.log("scrolledDown");
+        scrolling = 0;
     }
-    else if (scrolling>0)
+    else if (scrolling > 3) 
     {
-        if (scrolling>4)
-        {
-            console.log("scrolledUp");
-            scrolling = 0;
-        }
-        else 
-        {
-            console.log("barelyUp");
-        }
+        console.log("scrolledUp");
+        scrolling = 0;
     }
+
 
 }
 
