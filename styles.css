@@ -1,25 +1,155 @@
 body
 {
-    background-color: #101010;
+    margin: 0;
     color: rgb(235, 235, 235);
+    font-family: 'Century Gothic';
+    overflow: hidden;
 }
+
 #intro
 {
+    margin: 0;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(16,16,16,1) 10%, rgba(16,16,16,1) 80%, rgb(0, 36, 3) 100%); 
+}
+#placeholder
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    height:50%;
+    position: absolute;
+}
+.mainBoxes
+{
+    position: absolute;
+    width: 40vw;
+    height: 15vw;
+   
+}
+#rightText
+{
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 5vw;
+    top: -2.5vw;
+    text-align: justify;
+    padding: 0 3vw;
+    font-size: 1.3vw;
+    background-color: #161616;
+    border-radius: 0.5vw;
+    z-index: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    
+}
+#hello
+{
+    z-index: 1;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -5vw;
+    text-align: center;
+    padding: 0 5vw;
+    font-size:  4vw;
+    background-color: #202020;
+    border-radius: 0.5vw;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes cardToFront 
+{
+    0% 
+    {
+        z-index: 0;
+        top: -2.5vw;
+        left: 5vw;
+        background-color: #161616;
+    }
+    33%
+    {
+        z-index: 1;
+        top: -10vw;
+        left: 5vw;
+        background-color: #202020;
+    }
+    66% 
+    { 
+        top: -10vw;
+        left: 5vw;
+        background-color: #202020;
+        z-index: 1;
+    }
+    100%
+    {
+        top: 0vw;
+        background-color: #202020;
+        z-index: 1;
+        left: -5vw;
+    }
+}
+
+#projects
+{
+    margin: 0;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
     height:100vh;
     display:flex;
     align-items: center;
     justify-content: center;
 }
-#mainLeft
+
+@keyframes cardToBack 
 {
-    text-align: center;
-    width: 50%;
+    0% 
+    {
+        left: -5vw;
+        top: 0vw;
+        background-color: #202020;
+        z-index: 1;
+    }
+    33%
+    {
+        left: -5vw;
+        top: 0vw;
+        background-color: #161616;
+        z-index: 0;
+    }
+    66% 
+    { 
+        top: -2.5vw;
+        left: 5vw;
+        background-color: #161616;
+        z-index: 0;
+    }
+    100%
+    {
+        top: -2.5vw;
+        left: 5vw;
+        background-color: #161616;
+        z-index: 0;
+
+    }
 }
-#mainRight
+
+@keyframes scrollToFront 
 {
-    width: 50%;
-}
-#hello
-{
-    font-size: large;
+
 }
