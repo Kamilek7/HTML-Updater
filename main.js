@@ -27,7 +27,7 @@ function scrollManager(eventDelta)
     clearTimeout(wheelReset);
     scrolling += eventDelta/ Math.abs(eventDelta)
 
-    if (scrolling < -4) 
+    if (scrolling < -3) 
     {
         scrolling = 0;
         if (currentPage<numberOfPages-1)
@@ -38,7 +38,7 @@ function scrollManager(eventDelta)
             
         
     }
-    else if (scrolling > 4) 
+    else if (scrolling > 3) 
     {
         scrolling = 0;
         if (currentPage>0)
