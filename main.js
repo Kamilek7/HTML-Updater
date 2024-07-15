@@ -23,10 +23,11 @@ function changeIntroCard()
 
 function scrollManager(eventDelta)
 {
-    setTimeout(() => scrolling=0, 1000);
+    wheelReset = setTimeout(() => scrolling=0, 100);
+    clearTimeout(wheelReset);
     scrolling += eventDelta/ Math.abs(eventDelta)
 
-    if (scrolling < -3) 
+    if (scrolling < -4) 
     {
         scrolling = 0;
         if (currentPage<numberOfPages-1)
@@ -37,7 +38,7 @@ function scrollManager(eventDelta)
             
         
     }
-    else if (scrolling > 3) 
+    else if (scrolling > 4) 
     {
         scrolling = 0;
         if (currentPage>0)
@@ -47,7 +48,6 @@ function scrollManager(eventDelta)
         }
             
     }
-    console.log(currentPage);
 }
 
 cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
