@@ -25,5 +25,10 @@ class Projects:
         return projects
 
     def getProjectData():
-        pass
-print(Projects.getProjectPaths())
+        projects = Projects.getProjectPaths()
+        for project in projects:
+            imageFolderPath = join(MAIN_PROJECT_DIR, projects[project], "imagesForGallery")
+            images = listdir(imageFolderPath)
+            projects[project] = images
+        return projects
+print(Projects.getProjectData())
