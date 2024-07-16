@@ -29,6 +29,11 @@ class Projects:
         for project in projects:
             imageFolderPath = join(MAIN_PROJECT_DIR, projects[project], "imagesForGallery")
             images = listdir(imageFolderPath)
-            projects[project] = images
+            descriptionPath = join(MAIN_PROJECT_DIR, projects[project], "README.md")
+            print(descriptionPath)
+            file = open(descriptionPath,'r')
+            description = file.read()
+            file.close()
+            projects[project] = {"images" : images, "description": description}
         return projects
 print(Projects.getProjectData())
