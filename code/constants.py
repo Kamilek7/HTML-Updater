@@ -1,4 +1,5 @@
 from os.path import *
+from shutil import *
 import os
 
 # zdefiniowane dla mojego ukladu folderow

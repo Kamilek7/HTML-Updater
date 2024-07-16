@@ -35,8 +35,29 @@ class htmlEdit:
             tempFill = tempFill.replace("#IMAGE#", join("images",project,data[project]["images"][0]))
             tempCode += tempFill
         mainCode = mainCode.replace("#WINDOW GALLERY#", tempCode)
-        return(mainCode)
+        return(mainCode, data)
 
     @staticmethod
     def createOutputFiles():
-        mainCode = htmlEdit.fillTemplate()
+        mainDir = dirname(dirname(abspath(__file__)))
+        mainCode, data = htmlEdit.fillTemplate()
+        outputDir = join(mainDir, "output")
+        imagesDir = join(outputDir,"images")
+        if not exists(imagesDir):
+            os.mkdir(imagesDir)
+        file = open(join(outputDir,"index.html"), "w")
+        file.write(mainCode)
+        file.close()
+        templateDir = join(mainDir, "template", "main")
+        for file in ["main.js", "styles.css"]:
+            copyfile(join(templateDir, file), join(outputDir, file))
+        for project in data:
+            if not exists(join(imagesDir, project)):
+                os.mkdir(join(imagesDir, project))
+            for image in data[project]["images"]:
+                pathToImage = join(MAIN_PROJECT_DIR, data[project]["path"], "imagesForGallery", image)
+                pathInOutput = join(imagesDir,project, image)
+                copyfile(pathToImage, pathInOutput)
+
+
+htmlEdit.createOutputFiles()

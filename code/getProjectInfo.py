@@ -36,5 +36,5 @@ class Projects:
                 file = open(descriptionPath,'r')
                 description = file.read()
                 file.close()
-            projects[project] = {"images" : images, "description": description}
+            projects[project] = {"images" : images, "description": description, "path": projects[project]}
         return projects
