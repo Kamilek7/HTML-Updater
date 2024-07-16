@@ -1,4 +1,5 @@
-from os.path import *
+from constants import *
+
 class htmlEdit:
     mainCode = ""
     mainDir = ""
