@@ -13,7 +13,6 @@ class htmlEdit:
         template = join(dirname(dirname(thisDir)), "template")
         htmlEdit.mainDir = join(template, "main", "index.html")
         htmlEdit.fillingDir = join(template, "gallery", "window.html")
-        resources = join(dirname(dirname(thisDir)), "resources")
 
     @staticmethod
     def loadHTML():
