@@ -1,5 +1,5 @@
-from constants import *
 import getProjectInfo
+from constants import *
 
 class htmlEdit:
 
@@ -58,6 +58,3 @@ class htmlEdit:
                 pathToImage = join(MAIN_PROJECT_DIR, data[project]["path"], "imagesForGallery", image)
                 pathInOutput = join(imagesDir,project, image)
                 copyfile(pathToImage, pathInOutput)
-
-
-htmlEdit.createOutputFiles()
