@@ -1,41 +1,42 @@
 from constants import *
+import getProjectInfo
 
 class htmlEdit:
-    mainCode = ""
-    mainDir = ""
-    fillingCode = ""
-    fillingDir = ""
-    dataDir = ""
-    data = {}
+
 
     @staticmethod
-    def loadPaths():
+    def getPaths():
         thisDir = abspath(__file__)
         template = join(dirname(dirname(thisDir)), "template")
-        htmlEdit.mainDir = join(template, "main", "index.html")
-        htmlEdit.fillingDir = join(template, "gallery", "window.html")
+        mainDir = join(template, "main", "index.html")
+        fillingDir = join(template, "gallery", "window.html")
+        return mainDir, fillingDir
 
     @staticmethod
-    def loadHTML():
-        file = open(htmlEdit.mainDir, "r")
-        htmlEdit.mainCode = file.read()
+    def getHTML():
+        mainDir, fillingDir = htmlEdit.getPaths()
+        file = open(mainDir, "r")
+        mainCode = file.read()
         file.close()
-        file = open(htmlEdit.fillingDir, "r")
-        htmlEdit.fillingCode = file.read()
+        file = open(fillingDir, "r")
+        fillingCode = file.read()
         file.close()
-
-    @staticmethod
-    def loadImages():
-        pass
-
-    @staticmethod
-    def loadData():
-        pass
+        return mainCode, fillingCode
 
     @staticmethod
     def fillTemplate():
-        pass
+        data = getProjectInfo.Projects.getProjectData()
+        mainCode, fillingCode = htmlEdit.getHTML()
+        tempCode = ""
+        for project in data:
+            tempFill = fillingCode
+            githubURL = join("https://github.com/Kamilek7", project)
+            tempFill = tempFill.replace("#SITE LINK#", githubURL)
+            tempFill = tempFill.replace("#IMAGE#", join("images",project,data[project]["images"][0]))
+            tempCode += tempFill
+        mainCode = mainCode.replace("#WINDOW GALLERY#", tempCode)
+        return(mainCode)
 
-htmlEdit.loadPaths()
-htmlEdit.loadHTML()
-print(htmlEdit.mainCode)
+    @staticmethod
+    def createOutputFiles():
+        mainCode = htmlEdit.fillTemplate()

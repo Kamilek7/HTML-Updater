@@ -1,5 +1,5 @@
 from os.path import *
-from os import *
+import os
 
 # zdefiniowane dla mojego ukladu folderow
 
