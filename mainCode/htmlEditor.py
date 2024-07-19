@@ -9,7 +9,7 @@ class htmlEdit:
         thisDir = abspath(__file__)
         template = join(dirname(dirname(thisDir)), "template")
         mainDir = join(template, "main", "index.html")
-        fillingDir = join(template, "gallery", "window.html")
+        fillingDir = join(template, "additions", "window.html")
         return mainDir, fillingDir
 
     @staticmethod
