@@ -1,7 +1,7 @@
 from htmlEditor import *
 szerokosc = 40
 
-wiadomosc = "Witaj w progamie sluzacym do generowania gotowych projektow HTML na podstawie odpowiednich szablonow i ustawień wypisanych w załączonym pliku .JSON. Program jak na razie kompletnie raczkuje i został stworzony z zamysłem obsługi go przez odpowiedni serwer (np web server Django ze swoim 'gui')."
+wiadomosc = "Witaj w progamie sluzacym do generowania gotowych projektow HTML na podstawie odpowiednich szablonow i ustawień w nich zapisanych. Program jak na razie kompletnie raczkuje i został stworzony z zamysłem obsługi go przez odpowiedni serwer (np web server Django ze swoim 'gui')."
 
 podkreslenia = "="* szerokosc
 slowa = wiadomosc.split()
