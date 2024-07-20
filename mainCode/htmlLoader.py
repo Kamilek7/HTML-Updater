@@ -1,6 +1,6 @@
 from constants import *
 
-class FileLoader:
+class FileManager:
     @staticmethod
     def loadHTML(dir):
         if isfile(dir):
