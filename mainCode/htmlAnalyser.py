@@ -1,5 +1,5 @@
 from htmlLoader import *
-class HtmlAnalyser:
+class CodesExtractor:
 
     @staticmethod
     def analyzeCoding(codes):
@@ -23,17 +23,24 @@ class HtmlAnalyser:
                 tempCode = codeCpy[startIdx+2:endIdx]
                 codes.append(tempCode)
                 codeCpy = codeCpy[endIdx+2:-1]
-            codes = HtmlAnalyser.analyzeCoding(codes)
+            codes = CodesExtractor.analyzeCoding(codes)
             return codes
         else:
             raise OSError("Plik ze ścieżki " + dir + " jest źle okodowany lub w części uzytkowej wystąpily znaki kodujące (*# i #*).")
         
 
-    
+class HtmlAnalyser:
     @staticmethod
-    def getHTMLInfo(dir):
+    def getAllInfo(dir):
         code = FileManager.loadHTML(dir)
-        codes = HtmlAnalyser.extractCoding(code)
-        print(codes)
+        codes = CodesExtractor.extractCoding(code)
+        for section in codes:
+            fileName = section[0] + ".html"
+            mode = section[1]
+            pathToFile = join(THIS_DIR, "template", "additions", fileName)
+            newCode = FileManager.loadHTML(pathToFile)
+            newCodes = CodesExtractor.extractCoding(newCode)
+            print(newCodes)
+        
 
-HtmlAnalyser.getHTMLInfo("C:\\Users\\kamil\\Documents\\projekty\\nieskonczone\\Python\\HTML-Updater\\template\\main\\index.html")
+HtmlAnalyser.getAllInfo("C:\\Users\\kamil\\Documents\\projekty\\nieskonczone\\Python\\HTML-Updater\\template\\main\\index.html")
