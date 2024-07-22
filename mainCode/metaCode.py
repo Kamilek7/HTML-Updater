@@ -5,3 +5,4 @@ class MetaCoder:
         filename = source + ".html"
         sourceDir = join(THIS_DIR, "template", "additions", filename)
         code = FileManager.loadHTML(sourceDir)
+        print(code)

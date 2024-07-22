@@ -1,4 +1,7 @@
 from fileLoader import *
+from metaCode import *
+from getProjectInfo import *
+
 class CodesExtractor:
 
     @staticmethod
@@ -84,7 +87,7 @@ class CodeAnalyser:
             code += CodeAnalyser.checkForFlags(line)
         if code[-1]=="-":
             code = code[:-2]
-        print(code)
+        exec(code)
 
 
 
