@@ -1,8 +1,16 @@
 import getProjectInfo
 from constants import *
+from htmlAnalyser import *
 
 class htmlEdit:
 
+    @staticmethod
+    def fillMainFiles(dir):
+        code = FileManager.loadHTML(dir)
+        codesAndLines = CodesExtractor.extractCoding(code)
+        for codes in codesAndLines:
+            code = CodeAnalyser.getNewHTML(codes, code)
+        return code
 
     @staticmethod
     def getPaths():

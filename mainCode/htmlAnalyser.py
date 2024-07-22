@@ -53,13 +53,6 @@ class CodesExtractor:
 
 class CodeAnalyser:
     @staticmethod
-    def getAllInfo(dir):
-        code = FileManager.loadHTML(dir)
-        codesAndLines = CodesExtractor.extractCoding(code)
-        for codes in codesAndLines:
-            CodeAnalyser.checkLines(codes)
-    
-    @staticmethod
     def checkForFlags(line):
         tab = 0
         for char in line:
@@ -69,15 +62,26 @@ class CodeAnalyser:
                 break
         if tab+3>=len(line):
             return "-"
+        flags = ["fill-template", "get"]
         flagList = {"fill-template" : "MetaCoder.fillTemplate"}
+        lineTemp = ""
+        flagCount = 0
+        for flag in flags:
+            if flag in line:
+                flagCount+=1
         for flag in flagList:
             if flag in line:
                 words = line.split()
-                line = tab*" " + flagList[flag] + "("
-                for key in words[1:]:
-                    line += key + ", "
-                line = line[:-2] + ")"
-            return(line + "\n")
+                lineTemp += flagList[flag] + "("
+                for key in words[flagCount:]:
+                    lineTemp += key + ", "
+                lineTemp = lineTemp[:-2] + ")"
+            else:
+                lineTemp = line
+        if "get" in line:
+            lineTemp = "results.append(" + lineTemp + ")"
+        lineTemp = tab*" " + lineTemp
+        return(lineTemp + "\n")
 
 
     @staticmethod
@@ -87,9 +91,19 @@ class CodeAnalyser:
             code += CodeAnalyser.checkForFlags(line)
         if code[-1]=="-":
             code = code[:-2]
+        results = []
         exec(code)
+        return(results)
 
-
-
-
-CodeAnalyser.getAllInfo("C:\\Users\\kamil\\Documents\\projekty\\nieskonczone\\Python\\HTML-Updater\\template\\main\\index.html")
+    def getNewHTML(lines, code):
+        results = CodeAnalyser.checkLines(lines)
+        lineS = ""
+        temp = ""
+        codeTemp = code
+        for line in lines:
+            codeTemp = codeTemp.replace(line, "")
+        for i in results:
+            temp+= i
+        codeTemp = codeTemp.replace("*#", temp)
+        codeTemp = codeTemp.replace("#*", "")
+        return codeTemp
