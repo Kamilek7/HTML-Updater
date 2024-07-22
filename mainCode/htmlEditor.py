@@ -1,11 +1,10 @@
-import getProjectInfo
 from constants import *
 from htmlAnalyser import *
 
 class htmlEdit:
 
     @staticmethod
-    def fillMainFiles(dir):
+    def fillFile(dir):
         code = FileManager.loadHTML(dir)
         codesAndLines = CodesExtractor.extractCoding(code)
         for codes in codesAndLines:
@@ -32,20 +31,6 @@ class htmlEdit:
         return mainCode, fillingCode
 
     @staticmethod
-    def fillTemplate():
-        data = getProjectInfo.Projects.getProjectData()
-        mainCode, fillingCode = htmlEdit.getHTML()
-        tempCode = ""
-        for project in data:
-            tempFill = fillingCode
-            githubURL = join("https://github.com/Kamilek7", project)
-            tempFill = tempFill.replace("#SITE LINK#", githubURL)
-            tempFill = tempFill.replace("#IMAGE#", join("images",project,data[project]["images"][0]))
-            tempCode += tempFill
-        mainCode = mainCode.replace("#WINDOW GALLERY#", tempCode)
-        return(mainCode, data)
-
-    @staticmethod
     def createOutputFiles():
         mainDir = dirname(dirname(abspath(__file__)))
         mainCode, data = htmlEdit.fillTemplate()
@@ -66,3 +51,5 @@ class htmlEdit:
                 pathToImage = join(MAIN_PROJECT_DIR, data[project]["path"], "imagesForGallery", image)
                 pathInOutput = join(imagesDir,project, image)
                 copyfile(pathToImage, pathInOutput)
+
+htmlEdit.fillFile("C:\\Users\\kamil\\Documents\\projekty\\nieskonczone\\Python\\HTML-Updater\\template\\main\\index.html")
