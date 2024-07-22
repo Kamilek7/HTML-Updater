@@ -1,4 +1,4 @@
-from htmlLoader import *
+from fileLoader import *
 class CodesExtractor:
 
     @staticmethod
@@ -71,7 +71,7 @@ class CodeAnalyser:
             if flag in line:
                 words = line.split()
                 line = tab*" " + flagList[flag] + "("
-                for key in words:
+                for key in words[1:]:
                     line += key + ", "
                 line = line[:-2] + ")"
             return(line + "\n")

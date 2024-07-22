@@ -38,3 +38,5 @@ class Projects:
                 file.close()
             projects[project] = {"images" : images, "description": description, "path": projects[project]}
         return projects
+    
+PROJECTS = Projects.getProjectData()
