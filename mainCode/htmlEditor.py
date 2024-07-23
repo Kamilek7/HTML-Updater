@@ -38,22 +38,21 @@ class htmlEdit:
         imagesDir = join(outputDir,"images")
         if not exists(imagesDir):
             os.mkdir(imagesDir)
-        print(htmls)
-        mainFiles = findExtension(mainDir,"html")
         for file in htmls:
             createFile(join(outputDir,basename(file)), htmls[file])
-        # file = open(join(outputDir,"index.html"), "w")
-        # file.write(mainCode)
-        # file.close()
-        # templateDir = join(mainDir, "template", "main")
-        # for file in ["main.js", "styles.css"]:
-        #     copyfile(join(templateDir, file), join(outputDir, file))
-        # for project in data:
-        #     if not exists(join(imagesDir, project)):
-        #         os.mkdir(join(imagesDir, project))
-        #     for image in data[project]["images"]:
-        #         pathToImage = join(MAIN_PROJECT_DIR, data[project]["path"], "imagesForGallery", image)
-        #         pathInOutput = join(imagesDir,project, image)
-        #         copyfile(pathToImage, pathInOutput)
+        processingFiles = os.listdir(mainDir)
+        for i in processingFiles:
+            for j in htmls:
+                if i == basename(j):
+                    processingFiles.remove(i)
+        for file in processingFiles:
+            copyfile(join(mainDir, file), join(outputDir, file))
+        for project in PROJECTS:
+            if not exists(join(imagesDir, project)):
+                os.mkdir(join(imagesDir, project))
+            for image in PROJECTS[project]["images"]:
+                pathToImage = join(MAIN_PROJECT_DIR, PROJECTS[project]["path"], "imagesForGallery", basename(image))
+                pathInOutput = join(outputDir,image)
+                copyfile(pathToImage, pathInOutput)
 
 htmlEdit.createOutputFiles()
