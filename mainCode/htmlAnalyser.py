@@ -1,4 +1,3 @@
-from fileLoader import *
 from metaCode import *
 from getProjectInfo import *
 
@@ -97,7 +96,6 @@ class CodeAnalyser:
 
     def getNewHTML(lines, code):
         results = CodeAnalyser.checkLines(lines)
-        lineS = ""
         temp = ""
         codeTemp = code
         for line in lines:

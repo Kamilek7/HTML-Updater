@@ -7,3 +7,24 @@ import os
 MAIN_PROJECT_DIR = join(dirname(dirname(dirname(dirname(dirname(abspath(__file__)))))), "skonczone")
 THIS_DIR = dirname(dirname(abspath(__file__)))
 
+def loadFile(dir):
+    if isfile(dir):
+        file = open(dir, "r")
+        html = file.read()
+        file.close()
+        return html
+    else:
+        raise OSError("Na scieżce " + dir + " nie znaleziono żądanego pliku.")
+    
+def findExtension(path, ext):
+    files = os.listdir(path)
+    output = []
+    for file in files:
+        if "." + ext in file:
+            output.append(file) 
+    return output
+
+def createFile(path, code):
+    file = open(path, "w")
+    file.write(code)
+    file.close()

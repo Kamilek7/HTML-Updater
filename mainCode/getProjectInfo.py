@@ -30,6 +30,8 @@ class Projects:
         for project in projects:
             imageFolderPath = join(MAIN_PROJECT_DIR, projects[project], "imagesForGallery")
             images = os.listdir(imageFolderPath)
+            for i in range(len(images)):
+                images[i] = join("images", project, images[i])
             descriptionPath = join(MAIN_PROJECT_DIR, projects[project], "README.md")
             description= "None"
             if isfile(descriptionPath):
