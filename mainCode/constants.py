@@ -6,6 +6,10 @@ import os
 
 MAIN_PROJECT_DIR = join(dirname(dirname(dirname(dirname(dirname(abspath(__file__)))))), "skonczone")
 THIS_DIR = dirname(dirname(abspath(__file__)))
+TEMPLATE_DIR = join(THIS_DIR, "template")
+MAIN_DIR = join(TEMPLATE_DIR, "main")
+OUTPUT_DIR = join(THIS_DIR, "output")
+IMAGES_DIR = join(OUTPUT_DIR,"images")
 
 def loadFile(dir):
     if isfile(dir):

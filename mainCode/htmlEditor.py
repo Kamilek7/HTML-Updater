@@ -13,11 +13,9 @@ class htmlEdit:
 
     @staticmethod
     def getPaths():
-        template = join(THIS_DIR, "template")
-        mainDir = join(template, "main")
-        mainFiles = findExtension(mainDir,"html")
+        mainFiles = findExtension(MAIN_DIR,"html")
         for i in range(len(mainFiles)):
-            mainFiles[i] = join(mainDir, mainFiles[i])
+            mainFiles[i] = join(MAIN_DIR, mainFiles[i])
         return mainFiles
 
     @staticmethod
@@ -30,29 +28,27 @@ class htmlEdit:
         return dirsWithCodes
     
     @staticmethod
+    def newPageLinks():
+        pass
+
+    @staticmethod
     def createOutputFiles():
-        template = join(THIS_DIR, "template")
-        mainDir = join(template, "main")
         htmls = htmlEdit.getFilledHTML()
-        outputDir = join(THIS_DIR, "output")
-        imagesDir = join(outputDir,"images")
-        if not exists(imagesDir):
-            os.mkdir(imagesDir)
+        if not exists(IMAGES_DIR):
+            os.mkdir(IMAGES_DIR)
         for file in htmls:
-            createFile(join(outputDir,basename(file)), htmls[file])
-        processingFiles = os.listdir(mainDir)
+            createFile(join(OUTPUT_DIR,basename(file)), htmls[file])
+        processingFiles = os.listdir(MAIN_DIR)
         for i in processingFiles:
             for j in htmls:
                 if i == basename(j):
                     processingFiles.remove(i)
         for file in processingFiles:
-            copyfile(join(mainDir, file), join(outputDir, file))
+            copyfile(join(MAIN_DIR, file), join(OUTPUT_DIR, file))
         for project in PROJECTS:
-            if not exists(join(imagesDir, project)):
-                os.mkdir(join(imagesDir, project))
+            if not exists(join(IMAGES_DIR, project)):
+                os.mkdir(join(IMAGES_DIR, project))
             for image in PROJECTS[project]["images"]:
                 pathToImage = join(MAIN_PROJECT_DIR, PROJECTS[project]["path"], "imagesForGallery", basename(image))
-                pathInOutput = join(outputDir,image)
+                pathInOutput = join(OUTPUT_DIR, image)
                 copyfile(pathToImage, pathInOutput)
-
-htmlEdit.createOutputFiles()
