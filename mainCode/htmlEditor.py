@@ -26,11 +26,27 @@ class htmlEdit:
             temp = htmlEdit.fillFile(file)
             dirsWithCodes[file] = temp
         return dirsWithCodes
-    
     @staticmethod
-    def newPageLinks():
-        pass
-
+    def copyWholeProjectFolder(project):
+        output = join(OUTPUT_DIR, project)
+        if isdir(output):
+            rmtree(output)
+        os.mkdir(output)
+        startDir = join(MAIN_PROJECT_DIR, PROJECTS[project]["path"])
+        directories = [""]
+        tempDirs = []
+        while len(directories)>0:
+            for directory in directories:
+                files = os.listdir(join(startDir, directory))
+                for file in files:
+                    if isfile(join(startDir, directory, file)) and not ".git" in file and not ".md" in file:
+                        copy(join(startDir, directory, file), join(output, directory, file))
+                    else:
+                        if not ".git" in file and not ".md" in file and not "imagesForGallery" in file:
+                            tempDirs.append(join(directory,file))
+                            os.mkdir(join(output, directory, file))
+            directories = tempDirs
+                # copytree(join(MAIN_PROJECT_DIR, PROJECTS[project]["path"]), join(OUTPUT_DIR, project))
     @staticmethod
     def createOutputFiles():
         htmls = htmlEdit.getFilledHTML()
@@ -48,6 +64,8 @@ class htmlEdit:
         for project in PROJECTS:
             if not exists(join(IMAGES_DIR, project)):
                 os.mkdir(join(IMAGES_DIR, project))
+            if PROJECTS[project]["html"]:
+                htmlEdit.copyWholeProjectFolder(project)
             for image in PROJECTS[project]["images"]:
                 pathToImage = join(MAIN_PROJECT_DIR, PROJECTS[project]["path"], "imagesForGallery", basename(image))
                 pathInOutput = join(OUTPUT_DIR, image)

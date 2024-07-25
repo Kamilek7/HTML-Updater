@@ -1,5 +1,7 @@
 from htmlEditor import *
-szerokosc = 40
+def runGenerator():
+    htmlEdit.createOutputFiles()
+szerokosc = 60
 
 wiadomosc = "Witaj w progamie sluzacym do generowania gotowych projektow HTML na podstawie odpowiednich szablonow i ustawień w nich zapisanych. Program jak na razie kompletnie raczkuje i został stworzony z zamysłem obsługi go przez odpowiedni serwer (np web server Django ze swoim 'gui')."
 
@@ -23,4 +25,4 @@ wiadomosc += linijka
 wiadomosc = podkreslenia+ "\n" + wiadomosc + "\n" + podkreslenia
 
 print(wiadomosc)
-htmlEdit.createOutputFiles()
+runGenerator()

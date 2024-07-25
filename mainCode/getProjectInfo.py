@@ -38,7 +38,13 @@ class Projects:
                 file = open(descriptionPath,'r')
                 description = file.read()
                 file.close()
-            projects[project] = {"images" : images, "description": description, "path": projects[project]}
+            files = os.listdir(join(MAIN_PROJECT_DIR, projects[project]))
+            html = False
+            for file in files:
+                if ".html" in file:
+                    html = True
+                    break
+            projects[project] = {"images" : images, "description": description, "path": projects[project], "html": html}
         return projects
     
 PROJECTS = Projects.getProjectData()

@@ -11,6 +11,8 @@ MAIN_DIR = join(TEMPLATE_DIR, "main")
 OUTPUT_DIR = join(THIS_DIR, "output")
 IMAGES_DIR = join(OUTPUT_DIR,"images")
 
+PROJECT_PAGES = True
+
 def loadFile(dir):
     if isfile(dir):
         file = open(dir, "r")
