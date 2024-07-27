@@ -26,11 +26,15 @@ class htmlEdit:
             temp = htmlEdit.fillFile(file)
             dirsWithCodes[file] = temp
         return dirsWithCodes
-    def addWaterMarkToIndex(HTMLCode):
+    
+    @staticmethod
+    def addWaterMarkToIndex(HTMLCode, project):
         filling = loadFile(join(TEMPLATE_DIR, "additions", "projectFill.html"))
         filling += "</body>"
+        filling = filling.replace("#DESCRIPTION#", PROJECTS[project]["description"])
         HTMLCode = HTMLCode.replace("</body>", filling)
         return HTMLCode
+    
     @staticmethod
     def copyWholeProjectFolder(project):
         output = join(OUTPUT_DIR, project)
@@ -51,9 +55,9 @@ class htmlEdit:
                             tempDirs.append(join(directory,file))
                             os.mkdir(join(output, directory, file))
             directories = tempDirs
-        html = loadFile(join(startDir, "index.html"))
-        html = htmlEdit.addWaterMarkToIndex(html)
-        createFile(join(startDir, "index.html"), html)
+        html = loadFile(join(output, "index.html"))
+        html = htmlEdit.addWaterMarkToIndex(html,project)
+        createFile(join(output, "index.html"), html)
     @staticmethod
     def createOutputFiles():
         htmls = htmlEdit.getFilledHTML()
