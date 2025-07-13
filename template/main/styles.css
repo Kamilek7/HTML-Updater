@@ -1,4 +1,4 @@
-body
+/* body
 {
     margin: 0;
     color: rgb(235, 235, 235);
@@ -31,16 +31,7 @@ body
 
     transform: rotate(-2deg);
 }
-#placeholder
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:50%;
-    height:50%;
-    position: absolute;
-    transform: rotate(2deg);
-}
+
 .mainBoxes
 {
     position: absolute;
@@ -229,29 +220,273 @@ body
     transform: scale(1.1);
 }
 
+*/
+:root
+{
+    --rootWidth: 1vw;
+    --projectWidth: 20vw;
+    --projectHeight: 15vw;
+    --projectGap: 2vw;
+    --mask: linear-gradient(0deg, transparent, black 20%, black 80%, transparent);
+    --gradient: linear-gradient(90deg, rgba(154, 31, 181, 1) 0%, rgba(252, 176, 69, 1) 20%, rgba(154, 31, 181, 1) 40%,rgba(252, 176, 69, 1) 60%,  rgba(154, 31, 181, 1) 80%,rgba(252, 176, 69, 1) 100%);
+}
+
+body
+{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    margin:0;
+    background-color: rgb(56, 56, 30);
+    font-family: 'Smooch Sans';
+}
+#bg1
+{
+    position:absolute;
+    top:0;
+    left:0;
+    filter: blur(1.5rem);
+    height:100vh;
+    width:100vw;
+    animation: animateBG1;
+    background: var(--gradient);
+    animation-duration: 50.0s;
+    background-size:500%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+.mainBoxes
+{
+    position: absolute;
+    width: 40vw;
+    height: 15vw;
+   
+}
+#rightText
+{
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 5vw;
+    top: -2.5vw;
+    text-align: justify;
+    padding: 0 3vw;
+    font-size: 1.3vw;
+    background-color: #161616;
+    border-radius: 0.5vw;
+    z-index: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    
+}
+#hello
+{
+    z-index: 1;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -5vw;
+    text-align: center;
+    padding: 0 5vw;
+    font-size:  4vw;
+    background-color: #202020;
+    border-radius: 0.5vw;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#placeholder
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50%;
+    height:50%;
+    position: absolute;
+}
+
+#welcome
+{
+    padding: 2rem;
+    margin-inline: auto;
+    margin-top: 30vh;
+    width:60vw;
+    height: 11rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 2rem;
+    box-shadow: 5px 10px 40px 10px rgba(40, 40, 40, 0.279);
+
+}
+#welcomeHead
+{
+    filter: brightness(0.9);
+    text-align: center;
+    animation: animateBG1;
+    background: var(--gradient);
+    animation-duration: 50.0s;
+    background-size:500%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color:transparent;
+    background-clip:text;
+    font-size: 3rem;
+    font-family: 'Climate Crisis';
+}
+#welcomeText
+{
+    color:#161616;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#arrow
+{
+    text-align: center;
+    font-size: 2rem;
+    filter: brightness(0.9);
+    animation: animateBG1;
+    background: var(--gradient);
+    animation-duration: 50.0s;
+    background-size:500%;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color:transparent;
+    background-clip:text;
+    font-weight:800;
+}
+
+#arrowBG
+{
+    margin-inline:auto;
+    margin-top:2vw;
+    width: fit-content;
+    padding: 0.4rem 2.5rem;
+    background-color: rgba(255, 255, 255, 0.477);
+    border-radius: 1rem;
+    box-shadow: 1px 3px 10px 1px rgba(40, 40, 40, 0.279);
+    transition: all 0.15s ease-in-out;
+}
+#arrowBG:hover
+{
+    cursor:pointer;
+    box-shadow: 0px 2px 10px 1px rgba(66, 141, 111, 0.379);
+    transform: scale(1.02);
+}
+#arrowBG:active
+{
+    cursor:pointer;
+    box-shadow: 0px 2px 7px 3px rgba(66, 141, 111, 0.379);
+    transform: scale(1);
+}
+#page2
+{
+    position:fixed;
+    top:95vh;
+    left:-2.5vw;
+    background-color: #161616;
+    width:105vw;
+    height:100vh;
+    padding: 5vh 0;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    transform: rotate(0.3deg);
+}
+#projectContainer
+{
+    margin:3vh auto;
+    width:60vw;
+    height:70vh;
+    mask-image: var(--mask);
+    overflow:scroll;
+}
+#projectRoot
+{
+    margin: 5% auto;
+    background-color: white;
+    width: var(--rootWidth);
+    height:fit-content;
+    border-radius: 10vw;
+    padding: 1px 0;
+}
+.project
+{
+    margin: 20vh 0;
+    position:relative;
+    background-color: white;
+    width: var(--projectWidth);
+    height: var(--projectHeight);
+    animation: projectIn;
+    animation-timeline: view();
+    
+}
+#projectContainer::-webkit-scrollbar 
+{
+  display: none;
+}
+.project:nth-child(even)
+{
+    right: calc( var(--projectWidth) + var(--projectGap));
+    
+}
+.project:nth-child(odd)
+{
+    left: calc( var(--rootWidth) + var(--projectGap));
+    
+}
+@keyframes animateBG1
+{
+    0%
+    {
+        background-position: left;
+    }
+    100%
+    {
+        background-position:right;
+    }
+}
 @keyframes scrollUp
 {
     0% 
     {
-        position:absolute;
-        top: 95vh;
+        position:fixed;
+        top: 99vh;
     }
     100% 
     {
-        position:absolute;
-        top: 0;
+        position:fixed;
+        top: 1vh;
     }
 }
 @keyframes scrollDown
 {
     0% 
     {
-        position:absolute;
-        top: 0;
+        position:fixed;
+        top: 1vh;
     }
     100% 
     {
-        position:absolute;
-        top: 95vh;
+        position:fixed;
+        top: 99vh;
+    }
+} 
+
+@keyframes projectIn
+{
+    0%
+    {
+        scale:0.7;
+    }
+    50%
+    {
+        scale:1;
+    }
+    100%
+    {
+        scale: 0.7;
     }
 }
