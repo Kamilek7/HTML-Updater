@@ -7,48 +7,56 @@
         <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <!-- <div id="placeholder">
-            <div class="mainBoxes">
-                <div id="rightText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut sapien dictum, ultricies ipsum eget,
-                    sollicitudin urna. Fusce nunc purus, cursus at lorem vel, aliquam malesuada ante. Aliquam accumsan eros
-                    vitae aliquet finibus. Quisque eu eleifend ex. Suspendisse eget diam sollicitudin, tincidunt tellus non,
-                    dictum dui.
-                </div>
-    
-            </div>
-            <div class="mainBoxes">
-                <div id="hello">Henlo</div>
-            </div>
-        </div> -->
         <div id="page1">
             <div id="welcome">
                 <div id="welcomeHead">WITAJ</div>
                 <div id='welcomeText'>Zapraszam do przejrzenia mojego "dorobku programistycznego"!</div>
                 <div id='arrowBG' onclick="nextPage()"><div id="arrow">&#8595;</div></div>
+                
             </div>
             <div id="bg1"></div>
         </div>
         <div id="page2">
-            <div id="arrowBG"><div id="arrow"></div>&#8593;</div>
+            <div id="arrowBG" onclick="prevPage()"><div id="arrow"></div>&#8593;</div>
             <div id="projectContainer">
 
                 <div id="projectRoot">
-                    <div class="project">AAAA</div>
-                    <div class="project">AAAA</div>
-                    <div class="project">AAAA</div>
-                    <div class="project">AAAA</div>
-                    <div class="project">AAAA</div>
-                    <div class="project">AAAA</div>
-                    <div class="project">AAAA</div>
+                    <div class="yearRow"><div>1984</div><div>1984</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
+                    <div class="yearRow"><div>2003</div><div>2003</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
+                    <div class="project"><img src="/home/kami/Downloads/image.png"><div class="projectTitle">AAAA</div></div>
 
                 </div>
             </div>
-            <div id="bg2"></div>
+            <div id="arrowBG" onclick="nextPage()"><div id="arrow"></div>&#8595;</div>
         </div>
         <div id="page3">
+            <div id="arrowBG" onclick="prevPage()"><div id="arrow"></div>&#8593;</div>
+            <div id="contact">
+                <div id="placeholder">
+                    <div class="mainBoxes">
+                        <div id="rightText">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut sapien dictum, ultricies ipsum eget, sollicitudin urna. Fusce nunc purus, cursus at lorem vel, aliquam malesuada ante. Aliquam accumsan eros vitae aliquet finibus. Quisque eu eleifend ex. Suspendisse eget diam sollicitudin, tincidunt tellus non, dictum dui.
+                        </div>
+                        
+                    </div>
+                    <div class="mainBoxes">
+                        <div id="hello">Henlo</div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="gradient gradient-1"></div>
+                <div class="gradient gradient-2"></div>
+                <div class="gradient gradient-3"></div>
+            </div>
+            
 
-            <div id="bg3"></div>
         </div>
     </body>
     <script src="main.js"></script>

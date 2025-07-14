@@ -7,9 +7,21 @@ function nextPage()
     
     if (currentPage<numPages)
     {
-        console.log("test");
+        console.log(currentPage)
         pages[currentPage].style.animationName = "scrollUp";
         currentPage++;
+    }
+}
+function prevPage()
+{
+    
+    if (currentPage>1)
+    {
+        
+        currentPage--;
+        console.log(currentPage);
+        pages[currentPage].style.animationName = "scrollDown";
+        
     }
 }
 // var pageList = [document.getElementById("intro"), document.getElementById("projects"), document.getElementById("test")]
@@ -66,3 +78,4 @@ function nextPage()
 
 // cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
 // window.addEventListener("wheel", (event)=> scrollManager(event.wheelDeltaY));
+
