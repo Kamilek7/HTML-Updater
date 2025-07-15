@@ -1,51 +1,63 @@
 const pages = [document.getElementById("page1"),document.getElementById("page2"), document.getElementById("page3")];
 const numPages = pages.length
+const cards = document.getElementsByClassName("mainBoxes")
+const cardPlaceholder = document.getElementById("placeholder")
+
 var currentPage = 1;
+var shuffled = false;
+var waitingCard = false;
+var waitingPage = false;
 
 function nextPage()
 {
     
-    if (currentPage<numPages)
+    if (currentPage<numPages && !waitingPage)
     {
-        console.log(currentPage)
+        waitingPage = true;
         pages[currentPage].style.animationName = "scrollUp";
+        pages[currentPage].addEventListener('animationend', () => {
+            waitingPage=false;
+        }, { once: true });
         currentPage++;
     }
 }
 function prevPage()
 {
     
-    if (currentPage>1)
+    if (currentPage>1  && !waitingPage)
     {
-        
+        waitingPage = true;
         currentPage--;
-        console.log(currentPage);
         pages[currentPage].style.animationName = "scrollDown";
+        pages[currentPage].addEventListener('animationend', () => {
+            waitingPage=false;
+        }, { once: true });
         
     }
 }
+
+function changeIntroCard()
+{
+    if (!waitingCard)
+    {
+        waitingCard = true;
+        shuffled = !shuffled;
+        cards[+shuffled].childNodes[1].style.animationName = "cardToBack";
+        cards[+(!shuffled)].childNodes[1].style.animationName = "cardToFront";
+        cards[+shuffled].childNodes[1].addEventListener('animationend', () => {
+            waitingCard=false;
+        });
+    }
+}
+
 // var pageList = [document.getElementById("intro"), document.getElementById("projects"), document.getElementById("test")]
 
 // var numberOfPages = 3;
 // var currentPage = 0;
-// var cards = document.getElementsByClassName("mainBoxes")
-// var cardPlaceholder = document.getElementById("placeholder")
-// var shuffled = false;
-// var waiting = false;
+
 // var scrolling = 0;
 
-// function changeIntroCard()
-// {
-//     if (!waiting)
-//     {
-//         waiting = true;
-//         shuffled = !shuffled;
-//         console.log();
-//         cards[+shuffled].childNodes[1].style.animationName = "cardToBack";
-//         cards[+ (!shuffled)].childNodes[1].style.animationName = "cardToFront";
-//         setTimeout(() => waiting=false, 2500);
-//     }
-// }
+
 
 // function scrollManager(eventDelta)
 // {
@@ -76,6 +88,6 @@ function prevPage()
 //     }
 // }
 
-// cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
+cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
 // window.addEventListener("wheel", (event)=> scrollManager(event.wheelDeltaY));
 
