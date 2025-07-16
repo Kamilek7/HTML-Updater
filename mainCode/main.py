@@ -5,9 +5,9 @@ PYTHON_DIR = os.path.dirname(os.path.abspath(__file__))
 MAIN_DIR =  os.path.dirname(PYTHON_DIR)
 TEMPLATE_DIR = os.path.join(MAIN_DIR, "template")
 OUTPUT_DIR = os.path.join(MAIN_DIR, "output")
-SETTINGS_FILE = "settings.json"
+SETTINGS_FILE = "loadedSettings.json"
 MEM_FILE = "currentState.json"
-
+CONFIG = "config.json"
 htmlData = ""
 
 with open(os.path.join(TEMPLATE_DIR, "index.html"), 'r') as html:
@@ -28,7 +28,7 @@ class Project:
         self.url = url
     
     def getCode(self):
-        return f"<div class='project'><img src='{self.images[0]}'><div class='projectTitle'>{self.name}</div></div>\n"
+        return f"<div class='project'><img src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}</a></div></div>\n"
 
 data = ""
 with open(os.path.join(TEMPLATE_DIR, SETTINGS_FILE)) as json_data:
@@ -42,13 +42,18 @@ if data!=memory:
     # with open(os.path.join(OUTPUT_DIR, MEM_FILE), 'w') as output:
     #     output.write(data)
     data = json.loads(data)
+    conf = ""
+    with open (os.path.join(MAIN_DIR, CONFIG)) as cnfg:
+        conf = cnfg.read()
+        conf = json.loads(conf)
     repos = []
     def sorter(el):
-        if el["name"]== "Color-Palette-Generator":
-            el["createdAt"] = "2023"
-            return datetime.strptime("2023-08-23T15:12:53Z", "%Y-%m-%dT%H:%M:%SZ")
-        else:
-            return datetime.strptime((el["createdAt"]), "%Y-%m-%dT%H:%M:%SZ")
+        for exc in conf:
+            if el["name"]==exc["name"]:
+                for sets in exc.keys():
+                    el[sets] = exc[sets]
+                break
+        return datetime.strptime((el["createdAt"]), "%Y-%m-%dT%H:%M:%SZ")
     data.sort(key=sorter)
 
     divs = []

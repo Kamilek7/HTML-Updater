@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "Color-Palette-Generator",
+        "createdAt" : "2023-08-23T15:12:53Z",
+        "url" : "https://rogal-rogal.duckdns.org/color-palette-generator/",
+        "_comment" : "For when you need to manually change the creation date or whatever else that's hard to change on Github"
+    },
+    {
+        "name" : "rogalTasks",
+        "url" : "https://tasks.rogal-rogal.duckdns.org/"
+    }
+]

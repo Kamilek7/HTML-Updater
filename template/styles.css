@@ -374,7 +374,11 @@ body
     position: absolute;
 }
 
-
+a
+{
+    text-decoration: none;
+    color:inherit;
+}
 
   /* Kod pobrany z CSS Plasma Background Generator
   https://github.com/fracergu/css-plasma-background-generator */
