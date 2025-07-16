@@ -1,0 +1,184 @@
+[
+  {
+    "createdAt": "2024-06-20T11:43:54Z",
+    "languages": [
+      {
+        "size": 1897,
+        "node": {
+          "name": "HTML"
+        }
+      },
+      {
+        "size": 3664,
+        "node": {
+          "name": "CSS"
+        }
+      },
+      {
+        "size": 15357,
+        "node": {
+          "name": "JavaScript"
+        }
+      }
+    ],
+    "name": "Color-Palette-Generator",
+    "url": "https://github.com/Kamilek7/Color-Palette-Generator",
+    "images": ""
+  },
+  {
+    "createdAt": "2025-06-29T21:42:56Z",
+    "languages": [
+      {
+        "size": 12277,
+        "node": {
+          "name": "Python"
+        }
+      },
+      {
+        "size": 32094,
+        "node": {
+          "name": "JavaScript"
+        }
+      },
+      {
+        "size": 366,
+        "node": {
+          "name": "HTML"
+        }
+      },
+      {
+        "size": 11051,
+        "node": {
+          "name": "CSS"
+        }
+      },
+      {
+        "size": 287,
+        "node": {
+          "name": "Shell"
+        }
+      }
+    ],
+    "name": "rogalTasks",
+    "url": "https://github.com/Kamilek7/rogalTasks",
+    "images": "https://github.com/user-attachments/assets/cb6a7e0f-f6d4-4df8-8bca-7fa99d7abaf0\nhttps://github.com/user-attachments/assets/65bc2d46-1521-4d3b-9fef-66289d784739"
+  },
+  {
+    "createdAt": "2024-04-08T11:24:48Z",
+    "languages": [
+      {
+        "size": 83411,
+        "node": {
+          "name": "Python"
+        }
+      }
+    ],
+    "name": "Python-Platformer",
+    "url": "https://github.com/Kamilek7/Python-Platformer",
+    "images": ""
+  },
+  {
+    "createdAt": "2024-08-15T17:39:52Z",
+    "languages": [
+      {
+        "size": 3840601,
+        "node": {
+          "name": "C++"
+        }
+      },
+      {
+        "size": 2876,
+        "node": {
+          "name": "GLSL"
+        }
+      },
+      {
+        "size": 754823,
+        "node": {
+          "name": "C"
+        }
+      },
+      {
+        "size": 16420,
+        "node": {
+          "name": "Objective-C"
+        }
+      },
+      {
+        "size": 2668,
+        "node": {
+          "name": "CMake"
+        }
+      }
+    ],
+    "name": "Simple-OpenGL-app-base",
+    "url": "https://github.com/Kamilek7/Simple-OpenGL-app-base",
+    "images": ""
+  },
+  {
+    "createdAt": "2024-06-20T11:38:35Z",
+    "languages": [
+      {
+        "size": 59486,
+        "node": {
+          "name": "C++"
+        }
+      }
+    ],
+    "name": "Danmaku-game-base",
+    "url": "https://github.com/Kamilek7/Danmaku-game-base",
+    "images": ""
+  },
+  {
+    "createdAt": "2024-10-14T11:55:58Z",
+    "languages": [
+      {
+        "size": 7230765,
+        "node": {
+          "name": "C++"
+        }
+      },
+      {
+        "size": 5537,
+        "node": {
+          "name": "GLSL"
+        }
+      },
+      {
+        "size": 1081458,
+        "node": {
+          "name": "C"
+        }
+      },
+      {
+        "size": 16420,
+        "node": {
+          "name": "Objective-C"
+        }
+      },
+      {
+        "size": 2668,
+        "node": {
+          "name": "CMake"
+        }
+      }
+    ],
+    "name": "CPP-Projekt",
+    "url": "https://github.com/Kamilek7/CPP-Projekt",
+    "images": ""
+  },
+  {
+    "createdAt": "2024-05-18T12:58:49Z",
+    "languages": [
+      {
+        "size": 90,
+        "node": {
+          "name": "HTML"
+        }
+      }
+    ],
+    "name": "Kamilek7.github.io",
+    "url": "https://github.com/Kamilek7/Kamilek7.github.io",
+    "images": ""
+  }
+]
