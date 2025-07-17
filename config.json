@@ -1,20 +1,24 @@
-[
-    {
-        "name" : "Color-Palette-Generator",
-        "createdAt" : "2023-08-23T15:12:53Z",
-        "url" : "https://rogal-rogal.duckdns.org/color-palette-generator/",
-        "_comment" : "For when you need to manually change the creation date or whatever else that's hard to change on Github"
-    },
-    {
-        "name" : "rogalTasks",
-        "url" : "https://tasks.rogal-rogal.duckdns.org/"
-    },
-    {
-        "name" : "HTML-Updater",
-        "createdAt" : "2025-07-16T15:12:53Z"
-    },
-    {
-        "name" : "Danmaku-game-base",
-        "createdAt" : "2023-12-16T15:12:53Z"
-    }
-]
+{
+    "_comment" : "For when you need to manually change the creation date or whatever else that's hard to change on Github. Use names that are used by gh json.",
+    "pagePath" : "~/projekty/temp",
+    "projects" : 
+        [
+            {
+                "name" : "Color-Palette-Generator",
+                "createdAt" : "2023-08-23T15:12:53Z",
+                "url" : "https://rogal-rogal.duckdns.org/color-palette-generator/"
+            },
+            {
+                "name" : "rogalTasks",
+                "url" : "https://tasks.rogal-rogal.duckdns.org/"
+            },
+            {
+                "name" : "HTML-Updater",
+                "createdAt" : "2025-07-16T15:12:53Z"
+            },
+            {
+                "name" : "Danmaku-game-base",
+                "createdAt" : "2023-12-16T15:12:53Z"
+            }
+        ]
+}

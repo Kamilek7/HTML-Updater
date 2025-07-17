@@ -54,6 +54,7 @@ if data!=memory:
                     el[sets] = exc[sets]
                 break
         return datetime.strptime((el["createdAt"]), "%Y-%m-%dT%H:%M:%SZ")
+    data = data["projects"]
     data.sort(key=sorter)
 
     divs = []
