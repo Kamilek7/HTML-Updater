@@ -48,13 +48,13 @@ if data!=memory:
         conf = json.loads(conf)
     repos = []
     def sorter(el):
-        for exc in conf:
+        confs = conf["projectData"]
+        for exc in confs:
             if el["name"]==exc["name"]:
                 for sets in exc.keys():
                     el[sets] = exc[sets]
                 break
         return datetime.strptime((el["createdAt"]), "%Y-%m-%dT%H:%M:%SZ")
-    data = data["projects"]
     data.sort(key=sorter)
 
     divs = []

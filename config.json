@@ -1,7 +1,7 @@
 {
     "_comment" : "For when you need to manually change the creation date or whatever else that's hard to change on Github. Use names that are used by gh json.",
     "pagePath" : "~/projekty/temp",
-    "projects" : 
+    "projectData" : 
         [
             {
                 "name" : "Color-Palette-Generator",
