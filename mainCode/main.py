@@ -70,6 +70,7 @@ if data!=memory:
             repo["images"] = ["none"]
         numLang = len(repo["languages"])
         repo["languages"] = [lang["node"]["name"] for lang in repo["languages"]]
+        repo["name"] = repo["name"].replace("-", " ")
         if numLang>3:
             repo["languages"] = repo["languages"][:3]
         divs.append(Project(repo["name"], repo["languages"], repo["images"], repo["url"]))

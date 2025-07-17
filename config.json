@@ -8,5 +8,13 @@
     {
         "name" : "rogalTasks",
         "url" : "https://tasks.rogal-rogal.duckdns.org/"
+    },
+    {
+        "name" : "HTML-Updater",
+        "createdAt" : "2025-07-16T15:12:53Z"
+    }
+    {
+        "name" : "Danmaku-game-base",
+        "createdAt" : "2023-12-16T15:12:53Z"
     }
 ]
