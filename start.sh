@@ -1,4 +1,5 @@
 #!/bin/bash
+git pull
 cd template
 touch loadedSettings.json
 gh repo list --visibility "public" --json name | jq -c '.[]' | while read -r repo; do 
