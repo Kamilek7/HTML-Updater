@@ -12,5 +12,6 @@ cd ../
 python3 mainCode/main.py
 python3 mainCode/fromOutputToMainSite.py
 cd "$(jq -r .pagePath config.json)"
-git pull
+git pull --rebase
+git commit -a -m "automatic response from Rogal"
 git push
