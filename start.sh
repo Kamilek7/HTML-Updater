@@ -12,5 +12,5 @@ done | jq -s '.' > loadedSettings.json
 cd ../
 python3 mainCode/main.py
 python3 mainCode/fromOutputToMainSite.py
-cd $pagePath
+cd $pageDir
 git push
