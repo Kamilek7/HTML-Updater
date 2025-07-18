@@ -215,6 +215,7 @@ body
 
 .projectTitle
 {
+    padding-top:0.5vw;
     position:relative;
     bottom:calc(var(--projectHeight)/4.0);
     left:0;
@@ -230,8 +231,10 @@ body
 {
     display:block;
     margin:auto;
+    margin-top: 0.5rem;
     padding:0;
 }
+
 .projectTitle:hover
 {
     cursor: pointer;

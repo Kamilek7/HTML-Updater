@@ -23,7 +23,7 @@ class Project:
         self.id = id
         self.description = description
     def getCode(self):
-        return f"<div class='project'><img tabindex='0' id='images_{self.id}' onclick='changeIMG({self.id})' src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}</a><p>{" ".join(self.langs)}</p>{self.description}<p></p></div></div>\n"
+        return f"<div class='project'><img id='images_{self.id}' onclick='changeIMG({self.id})' src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}</a><p>{" ".join(self.langs)}</p>{self.description}<p></p></div></div>\n"
 
 data = ""
 with open(os.path.join(TEMPLATE_DIR, SETTINGS_FILE)) as json_data:
