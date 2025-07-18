@@ -1,12 +1,37 @@
+const images = [{srcs:['imgs\\img-0.png', 'imgs\\img-1.png'], idx:0},
+{srcs:['imgs\\img-2.png', 'imgs\\img-3.png'], idx:0},
+{srcs:['imgs\\img-4.png', 'imgs\\img-5.png', 'imgs\\img-6.png'], idx:0},
+{srcs: [], idx:0},
+{srcs:['imgs\\img-7.png'], idx:0},
+{srcs:['imgs\\img-8.png', 'imgs\\img-9.png'], idx:0},
+{srcs:['imgs\\img-10.png', 'imgs\\img-11.png', 'imgs\\img-12.png'], idx:0},
+{srcs:['imgs\\img-13.png', 'imgs\\img-14.png'], idx:0},
+{srcs:['imgs\\img-15.png'], idx:0},
+];
 const pages = [document.getElementById("page1"),document.getElementById("page2"), document.getElementById("page3")];
-const numPages = pages.length
-const cards = document.getElementsByClassName("mainBoxes")
-const cardPlaceholder = document.getElementById("placeholder")
+const numPages = pages.length;
+const cards = document.getElementsByClassName("mainBoxes");
+const cardPlaceholder = document.getElementById("placeholder");
 
 var currentPage = 1;
 var shuffled = false;
 var waitingCard = false;
 var waitingPage = false;
+
+function changeIMG(id)
+{
+    let img = document.getElementById(`images_${id}`);
+    let idx = (images[id].idx+1)%(images[id].srcs.length);
+    let src = images[id].srcs[idx];
+    img.style.animationName = "imgChangeIn";
+    setTimeout(() => {
+        img.src = src;
+        img.style.animationName = "imgChangeOut";
+    }, 500)
+    images[id].idx = idx;
+    
+    console.log(images);
+}
 
 function nextPage()
 {
@@ -50,44 +75,4 @@ function changeIntroCard()
     }
 }
 
-// var pageList = [document.getElementById("intro"), document.getElementById("projects"), document.getElementById("test")]
-
-// var numberOfPages = 3;
-// var currentPage = 0;
-
-// var scrolling = 0;
-
-
-
-// function scrollManager(eventDelta)
-// {
-//     wheelReset = setTimeout(() => scrolling=0, 100);
-//     clearTimeout(wheelReset);
-//     scrolling += eventDelta/ Math.abs(eventDelta)
-
-//     if (scrolling < -3) 
-//     {
-//         scrolling = 0;
-//         if (currentPage<numberOfPages-1)
-//         {
-//             currentPage+=1;
-//             pageList[currentPage-1].style.animationName = "scrollDown";
-//         }
-            
-        
-//     }
-//     else if (scrolling > 3) 
-//     {
-//         scrolling = 0;
-//         if (currentPage>0)
-//         {
-//             currentPage-=1;
-//             pageList[currentPage].style.animationName = "scrollUp";
-//         }
-            
-//     }
-// }
-
 cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
-// window.addEventListener("wheel", (event)=> scrollManager(event.wheelDeltaY));
-

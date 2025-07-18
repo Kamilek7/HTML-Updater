@@ -1,12 +1,25 @@
 const pages = [document.getElementById("page1"),document.getElementById("page2"), document.getElementById("page3")];
-const numPages = pages.length
-const cards = document.getElementsByClassName("mainBoxes")
-const cardPlaceholder = document.getElementById("placeholder")
+const numPages = pages.length;
+const cards = document.getElementsByClassName("mainBoxes");
+const cardPlaceholder = document.getElementById("placeholder");
 
 var currentPage = 1;
 var shuffled = false;
 var waitingCard = false;
 var waitingPage = false;
+
+function changeIMG(id)
+{
+    let img = document.getElementById(`images_${id}`);
+    let idx = (images[id].idx+1)%(images[id].srcs.length);
+    let src = images[id].srcs[idx];
+    img.style.animationName = "imgChangeIn";
+    setTimeout(() => {
+        img.src = src;
+        img.style.animationName = "imgChangeOut";
+    }, 500)
+    images[id].idx = idx;
+}
 
 function nextPage()
 {
@@ -50,44 +63,4 @@ function changeIntroCard()
     }
 }
 
-// var pageList = [document.getElementById("intro"), document.getElementById("projects"), document.getElementById("test")]
-
-// var numberOfPages = 3;
-// var currentPage = 0;
-
-// var scrolling = 0;
-
-
-
-// function scrollManager(eventDelta)
-// {
-//     wheelReset = setTimeout(() => scrolling=0, 100);
-//     clearTimeout(wheelReset);
-//     scrolling += eventDelta/ Math.abs(eventDelta)
-
-//     if (scrolling < -3) 
-//     {
-//         scrolling = 0;
-//         if (currentPage<numberOfPages-1)
-//         {
-//             currentPage+=1;
-//             pageList[currentPage-1].style.animationName = "scrollDown";
-//         }
-            
-        
-//     }
-//     else if (scrolling > 3) 
-//     {
-//         scrolling = 0;
-//         if (currentPage>0)
-//         {
-//             currentPage-=1;
-//             pageList[currentPage].style.animationName = "scrollUp";
-//         }
-            
-//     }
-// }
-
 cardPlaceholder.addEventListener("mouseenter", changeIntroCard);
-// window.addEventListener("wheel", (event)=> scrollManager(event.wheelDeltaY));
-

@@ -250,6 +250,8 @@ body
     height:100%;
     object-fit: cover;
     transition: ease-in-out all 0.3s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
     
 }
 .project > img:hover
@@ -607,5 +609,28 @@ a
         background: var(--patternDark);
         z-index: 0;
 
+    }
+}
+
+@keyframes imgChangeIn
+{
+    0% 
+    {
+        opacity: 100%;
+    }
+    100%
+    {
+        opacity: 0%;
+    }
+}
+@keyframes imgChangeOut
+{
+    0% 
+    {
+        opacity: 0%;
+    }
+    100%
+    {
+        opacity: 100%;
     }
 }

@@ -1,13 +1,7 @@
-import json, os, shutil
+import json, shutil
 from datetime import datetime
+from imageDownload import *
 
-PYTHON_DIR = os.path.dirname(os.path.abspath(__file__))
-MAIN_DIR =  os.path.dirname(PYTHON_DIR)
-TEMPLATE_DIR = os.path.join(MAIN_DIR, "template")
-OUTPUT_DIR = os.path.join(MAIN_DIR, "output")
-SETTINGS_FILE = "loadedSettings.json"
-MEM_FILE = "currentState.json"
-CONFIG = "config.json"
 htmlData = ""
 
 with open(os.path.join(TEMPLATE_DIR, "index.html"), 'r') as html:
@@ -21,14 +15,14 @@ class TimeRow:
         return f"<div class='yearRow'><div>{self.year}</div><div>{self.year}</div></div>\n"
     
 class Project:
-    def __init__(self, name, langs, images, url):
+    def __init__(self, name, langs, images, url, id):
         self.name = name
         self.langs = langs
         self.images = images
         self.url = url
-    
+        self.id = id
     def getCode(self):
-        return f"<div class='project'><img src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}</a></div></div>\n"
+        return f"<div class='project'><img id='images_{self.id}' onclick='changeIMG({self.id})' src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}</a></div></div>\n"
 
 data = ""
 with open(os.path.join(TEMPLATE_DIR, SETTINGS_FILE)) as json_data:
@@ -38,14 +32,21 @@ memory = ""
 with open(os.path.join(OUTPUT_DIR, MEM_FILE)) as json_data:
     memory = json_data.read()
 
-if data!=memory:
+conf = ""
+with open(os.path.join(MAIN_DIR, CONFIG)) as json_data:
+    conf = json_data.read()
+
+memConf = ""
+with open(os.path.join(OUTPUT_DIR, MEM_CONFIG)) as json_data:
+    memConf = json_data.read()
+
+if data!=memory and conf!=memConf:
     # with open(os.path.join(OUTPUT_DIR, MEM_FILE), 'w') as output:
     #     output.write(data)
+    # with open(os.path.join(OUTPUT_DIR, MEM_CONF), 'w') as output:
+    #     output.write(conf)
     data = json.loads(data)
-    conf = ""
-    with open (os.path.join(MAIN_DIR, CONFIG)) as cnfg:
-        conf = cnfg.read()
-        conf = json.loads(conf)
+    conf = json.loads(conf)
     repos = []
     def sorter(el):
         confs = conf["projectData"]
@@ -59,7 +60,11 @@ if data!=memory:
 
     divs = []
     crntDate =""
-
+    javascript = "const images = ["
+    id = 0
+    if os.path.exists(os.path.join(OUTPUT_DIR, "imgs")):
+        shutil.rmtree(os.path.join(OUTPUT_DIR, "imgs"))
+    os.makedirs(os.path.join(OUTPUT_DIR, "imgs"))
     for repo in data:
         repo["createdAt"] = repo["createdAt"][:4]
         if crntDate!= repo["createdAt"]:
@@ -67,15 +72,25 @@ if data!=memory:
             divs.append(TimeRow(crntDate))
         if repo["images"] != "":
             repo["images"] = repo["images"].split("\n")
+            imgs = []
+            for i in range(len(repo["images"])):
+                repo["images"][i] = downloadImgLocally(repo["images"][i])
+            inside = f"{repo["images"]}"
+            javascript += "{srcs:" + inside + ", idx:0},\n"
+            
         else:
+            javascript += "{srcs: [], idx:0},\n"
             repo["images"] = ["none"]
-        numLang = len(repo["languages"])
-        repo["languages"] = [lang["node"]["name"] for lang in repo["languages"]]
         repo["name"] = repo["name"].replace("-", " ")
+        numLang = len(repo["languages"])
+        if not isinstance(repo["languages"][0], str):
+            repo["languages"] = [lang["node"]["name"] for lang in repo["languages"]]
         if numLang>3:
             repo["languages"] = repo["languages"][:3]
-        divs.append(Project(repo["name"], repo["languages"], repo["images"], repo["url"]))
-    
+        divs.append(Project(repo["name"], repo["languages"], repo["images"], repo["url"], id))
+        id+=1
+    javascript+="];\n"
+    ""
     projectCode = ""
     for div in divs:
         projectCode += div.getCode()
@@ -88,6 +103,12 @@ if data!=memory:
         if os.path.isfile(pathToFile):
             os.remove(pathToFile)
         shutil.copyfile(pathCopy, pathToFile)
+
+   
+    with open(os.path.join(OUTPUT_DIR, "main.js"), "r") as jsIN:
+        javascript += jsIN.read()
+    with open(os.path.join(OUTPUT_DIR, "main.js"), "w") as jsOUT:
+        jsOUT.write(javascript)
 
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as output:
         output.write(htmlData)
