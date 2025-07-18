@@ -1,6 +1,6 @@
 #!/bin/bash
 git stash
-git pull --rebase -X theirs 
+git pull --rebase
 pageDir=$(jq .pagePath config.json)
 cd template
 touch loadedSettings.json
