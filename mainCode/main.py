@@ -1,4 +1,3 @@
-import json, shutil
 from datetime import datetime
 from imageDownload import *
 
