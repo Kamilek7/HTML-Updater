@@ -9,4 +9,3 @@ SETTINGS_FILE = "loadedSettings.json"
 MEM_FILE = "currentState.json"
 CONFIG = "config.json"
 MEM_CONFIG = "currentConfig.json"
-#asdjiasodasoidjioasjoi
