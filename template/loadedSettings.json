@@ -1,33 +1,34 @@
 [
   {
     "createdAt": "2023-12-14T11:40:12Z",
+    "description": "",
     "languages": [
       {
-        "size": 6264,
+        "size": 7003,
         "node": {
           "name": "HTML"
         }
       },
       {
-        "size": 26900,
+        "size": 27296,
         "node": {
           "name": "CSS"
         }
       },
       {
-        "size": 4958,
+        "size": 4156,
         "node": {
           "name": "JavaScript"
         }
       },
       {
-        "size": 3098,
+        "size": 4866,
         "node": {
           "name": "Python"
         }
       },
       {
-        "size": 457,
+        "size": 469,
         "node": {
           "name": "Shell"
         }
@@ -39,6 +40,7 @@
   },
   {
     "createdAt": "2024-06-20T11:38:35Z",
+    "description": "cpp project from first year of cs - \"inspired\" by touhou ofc",
     "languages": [
       {
         "size": 59486,
@@ -53,6 +55,7 @@
   },
   {
     "createdAt": "2024-10-14T11:55:58Z",
+    "description": "",
     "languages": [
       {
         "size": 7230956,
@@ -91,6 +94,7 @@
   },
   {
     "createdAt": "2024-08-15T17:39:52Z",
+    "description": "",
     "languages": [
       {
         "size": 3840603,
@@ -129,6 +133,7 @@
   },
   {
     "createdAt": "2024-04-08T11:24:48Z",
+    "description": "python project for our first year of cs",
     "languages": [
       {
         "size": 83411,
@@ -143,6 +148,7 @@
   },
   {
     "createdAt": "2025-02-11T10:14:14Z",
+    "description": "",
     "languages": [
       {
         "size": 33439,
@@ -163,6 +169,7 @@
   },
   {
     "createdAt": "2024-06-20T11:43:54Z",
+    "description": "",
     "languages": [
       {
         "size": 1897,
@@ -189,6 +196,7 @@
   },
   {
     "createdAt": "2025-06-29T21:42:56Z",
+    "description": "",
     "languages": [
       {
         "size": 12277,
@@ -227,6 +235,7 @@
   },
   {
     "createdAt": "2024-05-18T12:58:49Z",
+    "description": "",
     "languages": [
       {
         "size": 90,

@@ -29,8 +29,9 @@
     --cardUp: -10vw;
 
     --rootWidth: 1vw;
-    --projectWidth: calc(4rem + 16vw );
-    --projectHeight: calc(3rem + 12vw );
+
+    --projectWidth: calc(12rem + 8vw );
+    --projectHeight: calc(9rem + 6vw );
     --projectGap: 2vw;
     --mask: linear-gradient(0deg, transparent, black 20%, black 80%, transparent);
     --gradient: linear-gradient(90deg, var(--mainPrpl) 0%, var(--mainOrng) 20%, var(--mainPrpl) 40%,var(--mainOrng) 60%,  var(--mainPrpl) 80%,var(--mainOrng) 100%);
@@ -214,6 +215,7 @@ body
 
 .projectTitle
 {
+    padding-top:0.5vw;
     position:relative;
     bottom:calc(var(--projectHeight)/4.0);
     left:0;
@@ -229,8 +231,10 @@ body
 {
     display:block;
     margin:auto;
+    margin-top: 0.5rem;
     padding:0;
 }
+
 .projectTitle:hover
 {
     cursor: pointer;
@@ -262,34 +266,73 @@ body
 {
   display: none;
 }
-#projectRoot .project:nth-child(even)
+
+.yearRow 
 {
-    right: calc( var(--projectWidth) + var(--projectGap));
-    
+    position: relative;
+    left: -20vw;
+    width: 40vw;
+    display: flex;
 }
-#projectRoot .project:nth-child(odd)
+
+.yearRow > * 
 {
-    left: calc( var(--rootWidth) + var(--projectGap));
-    
-}
-.yearRow
-{
-    position:relative;
-    left:-20vw;
-    width:40vw;
-    display:flex;
-}
-.yearRow > *
-{
-    margin:auto;
+    margin: auto;
     z-index: 0;
     --clr: rgb(146, 146, 146);
     color: var(--clr);
-    width:30%;
+    width: 30%;
     font-size: 4rem;
-    border-bottom: dashed 1px var(--clr); 
+    border-bottom: dashed 1px var(--clr);
     border-radius: 1rem;
     text-align: center;
+}
+
+@media only screen and (orientation: landscape) 
+{
+    #projectRoot .project:nth-child(even) {
+        right: calc(var(--projectWidth) + var(--projectGap));
+
+    }
+
+    #projectRoot .project:nth-child(odd)
+    {
+        left: calc( var(--rootWidth) + var(--projectGap));
+        
+    }
+
+}
+@media only screen and (orientation: portrait)
+{
+    #projectContainer
+    {
+
+        width:70vw;
+    }
+    #projectRoot .project
+    {
+        right: calc( var(--projectWidth)/2.0);
+        
+    }
+    .yearRow > *
+    {
+        width:60%;
+    }
+    .yearRow *:nth-child(2n)
+    {
+        display:none;
+    }
+    .projectTitle
+    {
+        font-size: 1.5rem;
+    }
+    .projectTitle:focus
+    {
+        cursor: pointer;
+        background-color: #303030d8;
+        height:var(--projectHeight);
+        bottom:var(--projectHeight);
+    }
 }
 
 #page3

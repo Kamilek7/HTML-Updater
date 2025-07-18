@@ -15,14 +15,15 @@ class TimeRow:
         return f"<div class='yearRow'><div>{self.year}</div><div>{self.year}</div></div>\n"
     
 class Project:
-    def __init__(self, name, langs, images, url, id):
+    def __init__(self, name, langs, images, url, id, description):
         self.name = name
         self.langs = langs
         self.images = images
         self.url = url
         self.id = id
+        self.description = description
     def getCode(self):
-        return f"<div class='project'><img id='images_{self.id}' onclick='changeIMG({self.id})' src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}<p>{" ".join(self.langs)}</p></a></div></div>\n"
+        return f"<div class='project'><img tabindex='0' id='images_{self.id}' onclick='changeIMG({self.id})' src='{self.images[0]}'><div class='projectTitle'><a href='{self.url}' target='_blank'>{self.name}</a><p>{" ".join(self.langs)}</p>{self.description}<p></p></div></div>\n"
 
 data = ""
 with open(os.path.join(TEMPLATE_DIR, SETTINGS_FILE)) as json_data:
@@ -87,7 +88,7 @@ if data!=memory and conf!=memConf:
             repo["languages"] = [lang["node"]["name"] for lang in repo["languages"]]
         if numLang>3:
             repo["languages"] = repo["languages"][:3]
-        divs.append(Project(repo["name"], repo["languages"], repo["images"], repo["url"], id))
+        divs.append(Project(repo["name"], repo["languages"], repo["images"], repo["url"], id, repo["description"]))
         id+=1
     javascript+="];\n"
     ""

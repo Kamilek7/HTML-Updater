@@ -1,4 +1,5 @@
 #!/bin/bash
+git stash
 git pull
 cd template
 touch loadedSettings.json
