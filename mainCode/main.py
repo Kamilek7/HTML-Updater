@@ -41,10 +41,10 @@ with open(os.path.join(OUTPUT_DIR, MEM_CONFIG)) as json_data:
     memConf = json_data.read()
 
 if data!=memory and conf!=memConf:
-    # with open(os.path.join(OUTPUT_DIR, MEM_FILE), 'w') as output:
-    #     output.write(data)
-    # with open(os.path.join(OUTPUT_DIR, MEM_CONF), 'w') as output:
-    #     output.write(conf)
+    with open(os.path.join(OUTPUT_DIR, MEM_FILE), 'w') as output:
+        output.write(data)
+    with open(os.path.join(OUTPUT_DIR, MEM_CONFIG), 'w') as output:
+        output.write(conf)
     data = json.loads(data)
     conf = json.loads(conf)
     repos = []
