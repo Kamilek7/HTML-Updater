@@ -1,7 +1,6 @@
 #!/bin/bash
 git stash
 git pull --rebase
-pageDir=$(jq .pagePath config.json)
 cd template
 touch loadedSettings.json
 gh repo list --visibility "public" --json name | jq -c '.[]' | while read -r repo; do 
@@ -12,5 +11,6 @@ done | jq -s '.' > loadedSettings.json
 cd ../
 python3 mainCode/main.py
 python3 mainCode/fromOutputToMainSite.py
-cd $pageDir
+cd "$(jq -r .pagePath config.json)"
+git pull
 git push
