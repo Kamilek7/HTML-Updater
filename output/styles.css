@@ -221,9 +221,6 @@ body
     color:white;
     font-size: 2rem;
     text-align: center;
-    display:flex;
-    align-items: center;
-    justify-content: center;
     height:calc(var(--projectHeight)/4.0);
     background-color: #30303062;
     transition: ease-in-out all 0.3s;
@@ -238,8 +235,8 @@ body
 {
     cursor: pointer;
     background-color: #303030d8;
-    height:calc(var(--projectHeight)/3.2);
-    bottom:calc(var(--projectHeight)/3.2);
+    height:var(--projectHeight);
+    bottom:var(--projectHeight);
 }
 .project > img
 {

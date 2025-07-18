@@ -1,12 +1,12 @@
-const images = [{srcs:['imgs\\img-0.png', 'imgs\\img-1.png'], idx:0},
-{srcs:['imgs\\img-2.png', 'imgs\\img-3.png'], idx:0},
-{srcs:['imgs\\img-4.png', 'imgs\\img-5.png', 'imgs\\img-6.png'], idx:0},
+const images = [{srcs:['imgs/img-0.png', 'imgs/img-1.png'], idx:0},
+{srcs:['imgs/img-2.png', 'imgs/img-3.png'], idx:0},
+{srcs:['imgs/img-4.png', 'imgs/img-5.png', 'imgs/img-6.png'], idx:0},
 {srcs: [], idx:0},
-{srcs:['imgs\\img-7.png'], idx:0},
-{srcs:['imgs\\img-8.png', 'imgs\\img-9.png'], idx:0},
-{srcs:['imgs\\img-10.png', 'imgs\\img-11.png', 'imgs\\img-12.png'], idx:0},
-{srcs:['imgs\\img-13.png', 'imgs\\img-14.png'], idx:0},
-{srcs:['imgs\\img-15.png'], idx:0},
+{srcs:['imgs/img-7.png'], idx:0},
+{srcs:['imgs/img-8.png', 'imgs/img-9.png'], idx:0},
+{srcs:['imgs/img-10.png', 'imgs/img-11.png', 'imgs/img-12.png'], idx:0},
+{srcs:['imgs/img-13.png', 'imgs/img-14.png'], idx:0},
+{srcs:['imgs/img-15.png'], idx:0},
 ];
 const pages = [document.getElementById("page1"),document.getElementById("page2"), document.getElementById("page3")];
 const numPages = pages.length;
@@ -29,8 +29,6 @@ function changeIMG(id)
         img.style.animationName = "imgChangeOut";
     }, 500)
     images[id].idx = idx;
-    
-    console.log(images);
 }
 
 function nextPage()
